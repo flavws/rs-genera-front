@@ -19,6 +19,10 @@ const routes: Routes = [
         loadChildren: () => import('./modules/auth/auth.module').then((m) => m.AuthModule),
     },
     {
+        path: 'professional',
+        loadChildren: () => import('./modules/professional/professional.module').then((m) => m.ProfessionalModule),
+    },
+    {
         redirectTo: '',
         path: '**',
     }

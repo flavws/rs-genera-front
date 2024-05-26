@@ -22,7 +22,7 @@ export class OnboardTwoComponent {
         exitAnimationDuration: string
     ): void {
         this.dialog.open(DialogAnimationsComponent, {
-            width: '100%',
+            width: '350px',
             enterAnimationDuration,
             exitAnimationDuration,
         });

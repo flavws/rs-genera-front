@@ -6,6 +6,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { FeedbacksRoutingModule } from './feedbacks-routing.module';
+import { CadastroSuccessComponent } from './pages/cadastro-success/cadastro-success.component';
+import { CadastroProfissionalSuccessComponent } from './pages/cadastro-profissional-success/cadastro-profissional-success.component';
 
 @NgModule({
     imports: [
@@ -15,6 +17,6 @@ import { FeedbacksRoutingModule } from './feedbacks-routing.module';
         MatIconModule,
         MatInputModule,
     ],
-    declarations: [HistorySuccessComponent, FeedbacksWrapperComponent],
+    declarations: [HistorySuccessComponent, FeedbacksWrapperComponent, CadastroSuccessComponent, CadastroProfissionalSuccessComponent],
 })
 export class FeedbacksModule {}

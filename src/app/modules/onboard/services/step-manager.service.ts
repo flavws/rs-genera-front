@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
     providedIn: 'root',
 })
 export class StepManagerService {
-    private partial = PartialEnums.two;
+    private partial = PartialEnums.one;
 
     public _partialSubscriber$ = new BehaviorSubject<PartialEnums>(this.partial);
 

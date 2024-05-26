@@ -1,0 +1,35 @@
+<app-wrapper-container pathIcon="assets/svg/auth/image3.svg">
+    <div class="onboard">
+        <div class="onboard__texts">
+            <h1>Entre em sua conta</h1>
+            <p>
+                Utilize seu e-mail e senha para acessar sua conta.
+            </p>
+        </div>
+        <div class="onboard__actions">
+            <form [formGroup]="form">
+                <mat-form-field appearance="outline" class="form-control" [hideRequiredMarker]="true">
+                    <mat-label>E-mail</mat-label>
+                    <input type="email" matInput formControlName="email">
+                    <mat-error *ngIf="form.get('email')?.hasError('required')">
+                        Campo é obrigatório
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="form-control" [hideRequiredMarker]="true">
+                    <mat-label>Senha</mat-label>
+                    <input type="password" matInput formControlName="password">
+                    <mat-error *ngIf="form.get('password')?.hasError('required')">
+                        Campo é obrigatório
+                    </mat-error>
+                </mat-form-field>
+            </form>
+            <button mat-flat-button
+                color="primary"
+                class="w-100 btn btn-primary"
+                (click)="sendData()"
+                [disabled]="form.invalid">
+                Fazer login
+            </button>
+        </div>
+    </div>
+</app-wrapper-container>

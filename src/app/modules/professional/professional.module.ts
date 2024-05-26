@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthRoutingModule } from './auth-routing.module';
-import { RegisterComponent } from './pages/register/register.component';
+import { ProfessionalRoutingModule } from './professional-routing.module';
+import { ProfessionalRegisterComponent } from './pages/professional-register/professional-register.component';
+import { WrapperContainerModule } from 'src/app/shared/components/wrapper-container/wrapper-container.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { LoginComponent } from './pages/login/login.component';
-import { WrapperContainerModule } from 'src/app/shared/components/wrapper-container/wrapper-container.module';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
     imports: [
         CommonModule,
-        AuthRoutingModule,
+        ProfessionalRoutingModule,
         MatButtonModule,
         MatIconModule,
         MatInputModule,
@@ -22,8 +22,9 @@ import { WrapperContainerModule } from 'src/app/shared/components/wrapper-contai
         ReactiveFormsModule,
         MatFormFieldModule,
         MatCheckboxModule,
+        MatAutocompleteModule,
         WrapperContainerModule
     ],
-    declarations: [RegisterComponent, LoginComponent],
+    declarations: [ProfessionalRegisterComponent],
 })
-export class AuthModule {}
+export class ProfessionalModule {}
