@@ -1,0 +1,13 @@
+@import '../../../../../../../assets/scss/colors';
+
+.dialog {
+    .actions {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        button {
+            width: auto;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<div class="wrapper animate__animated animate__fadeInLeft">
+    <div class="container">
+        <ng-container *ngIf="previousBtn">
+            <button mat-flat-button class="btn-previous" (click)="previousChange.emit()">
+                <mat-icon>arrow_back</mat-icon>
+                Voltar
+            </button>
+        </ng-container>
+        <div class="content">
+            <ng-container *ngIf="pathIcon && pathIcon.length > 0">
+                <div class="icon">
+                    <img [src]="pathIcon" [alt]="alt">
+                </div>
+            </ng-container>
+            <div class="wrapper__content">
+                <ng-content></ng-content>
+            </div>
+        </div>
+    </div>
+</div>

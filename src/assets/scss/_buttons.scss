@@ -1,0 +1,28 @@
+@import './colors';
+
+@mixin disabled() {
+    &[disabled] {
+        color: var(--mdc-filled-button-disabled-label-text-color, rgba(0, 0, 0, 0.38)) !important;
+        background-color: var(--mdc-filled-button-disabled-container-color, rgba(0, 0, 0, 0.12)) !important;
+    }
+}
+
+.btn {
+    &-primary {
+        color: $black !important;
+        background-color: $primary !important;
+        @include disabled;
+    }
+
+    &-secondary {
+        color: $black !important;
+        background-color: $secondary !important;
+        @include disabled;
+    }
+
+    &-terciary {
+        color: $black !important;
+        background-color: $terciary !important;
+        @include disabled;
+    }
+}

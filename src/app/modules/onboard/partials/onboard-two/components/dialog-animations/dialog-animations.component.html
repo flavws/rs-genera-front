@@ -1,0 +1,10 @@
+<div class="dialog">
+    <h1 mat-dialog-title>Deseja realmente pular etapa?</h1>
+    <div mat-dialog-content>
+        Você pode pular esta etapa e ir direto para o cadastro na plataforma.
+    </div>
+    <div mat-dialog-actions class="actions">
+        <button mat-button mat-dialog-close class="btn btn-terciary">Não</button>
+        <button mat-button mat-dialog-close cdkFocusInitial class="btn btn-primary" (click)="goToRegister()">Sim</button>
+    </div>
+</div>

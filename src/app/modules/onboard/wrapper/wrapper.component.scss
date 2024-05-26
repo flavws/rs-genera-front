@@ -1,0 +1,31 @@
+@import '../../../../assets/scss/colors';
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 32px;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 32px;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .btn-previous {
+        text-transform: uppercase;
+    }
+
+    .content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 32px;
+        row-gap: 32px;
+    }
+}
