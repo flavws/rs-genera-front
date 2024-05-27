@@ -10,6 +10,8 @@ import { MatInputModule } from '@angular/material/input';
 import { SchedulingExplorerComponent } from './wrapper/scheduling-explorer/scheduling-explorer.component';
 import { CardSchedulingModule } from 'src/app/shared/components/card-scheduling/card-scheduling.module';
 import { SchedulingViewUserComponent } from './pages/scheduling-user/partials/scheduling-view-user/scheduling-view-user.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { SchedulingResultUserComponent } from './pages/scheduling-user/partials/scheduling-result-user/scheduling-result-user.component';
 
 @NgModule({
     imports: [
@@ -18,7 +20,8 @@ import { SchedulingViewUserComponent } from './pages/scheduling-user/partials/sc
         MatButtonModule,
         MatIconModule,
         MatInputModule,
-        CardSchedulingModule
+        CardSchedulingModule,
+        MatChipsModule
     ],
     declarations: [
         SchedulingWrapperComponent,
@@ -26,6 +29,7 @@ import { SchedulingViewUserComponent } from './pages/scheduling-user/partials/sc
         SchedulingProfessionalComponent,
         SchedulingExplorerComponent,
         SchedulingViewUserComponent,
+        SchedulingResultUserComponent,
     ],
 })
 export class SchedulingModule {}

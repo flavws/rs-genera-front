@@ -1,0 +1,80 @@
+@import '../../../../../../../assets/scss/colors';
+
+.scheduling {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    .wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 24px;
+    }
+
+    .avatar {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        background-color: #dbdbdb;
+        margin-bottom: 16px;
+        background-image: url('../../../../../../../assets/img/avatar/user.png');
+        background-position: center;
+        background-size: cover;
+        margin: 0 auto;
+        margin-bottom: 16px;
+    }
+
+    h1 {
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+        color: #000000DE;
+        margin-bottom: 8px;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    small {
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.1px;
+        color: #00000099;
+        margin-bottom: 8px;
+    }
+
+    span {
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.1px;
+        color: #00000099;
+        margin-bottom: 8px;
+    }
+
+    small, span {
+        display: block;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .chips {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .btn {
+        text-transform: uppercase;
+        font-size: 15px;
+        line-height: 16px;
+        letter-spacing: 1.25px;
+        font-weight: 500;
+        margin-bottom: 4px;
+    }
+}

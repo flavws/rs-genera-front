@@ -3,17 +3,25 @@ import { RouterModule, Routes } from '@angular/router';
 import { SchedulingUserComponent } from './pages/scheduling-user/scheduling-user.component';
 import { SchedulingProfessionalComponent } from './pages/scheduling-professional/scheduling-professional.component';
 import { SchedulingViewUserComponent } from './pages/scheduling-user/partials/scheduling-view-user/scheduling-view-user.component';
+import { SchedulingResultUserComponent } from './pages/scheduling-user/partials/scheduling-result-user/scheduling-result-user.component';
 
 const routes: Routes = [
     {
         path: 'scheduling-user',
-        component: SchedulingUserComponent,
         children: [
             {
-                path: 'view',
+                path: '',
+                component: SchedulingUserComponent
+            },
+            {
+                path: ':id',
                 component: SchedulingViewUserComponent
-            }
-        ]
+            },
+        ],
+    },
+    {
+        path: 'scheduling-user-result',
+        component: SchedulingResultUserComponent
     },
     {
         path: 'scheduling-profissional',

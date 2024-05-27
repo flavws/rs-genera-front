@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-scheduling-user',
@@ -28,4 +29,14 @@ export class SchedulingUserComponent {
     ];
 
     public username = 'Carlos Eduardo';
+
+    public constructor(private router: Router) {}
+
+    public goToLogin(): void {
+        this.router.navigate(['/auth/login']);
+    }
+
+    public goToView(id: number): void {
+        this.router.navigate(['/scheduling/scheduling-user', id]);
+    }
 }
