@@ -4,6 +4,8 @@ import { SchedulingUserComponent } from './pages/scheduling-user/scheduling-user
 import { SchedulingProfessionalComponent } from './pages/scheduling-professional/scheduling-professional.component';
 import { SchedulingViewUserComponent } from './pages/scheduling-user/partials/scheduling-view-user/scheduling-view-user.component';
 import { SchedulingResultUserComponent } from './pages/scheduling-user/partials/scheduling-result-user/scheduling-result-user.component';
+import { SchedulingViewProfessionalComponent } from './pages/scheduling-professional/partials/scheduling-view-professional/scheduling-view-professional.component';
+import { SchedulingResultProfessionalComponent } from './pages/scheduling-professional/partials/scheduling-result-professional/scheduling-result-professional.component';
 
 const routes: Routes = [
     {
@@ -25,7 +27,20 @@ const routes: Routes = [
     },
     {
         path: 'scheduling-profissional',
-        component: SchedulingProfessionalComponent
+        children: [
+            {
+                path: '',
+                component: SchedulingProfessionalComponent
+            },
+            {
+                path: ':id',
+                component: SchedulingViewProfessionalComponent
+            },
+        ],
+    },
+    {
+        path: 'scheduling-profissional-result',
+        component: SchedulingResultProfessionalComponent
     },
     {
         path: '',

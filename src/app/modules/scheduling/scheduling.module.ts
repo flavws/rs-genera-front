@@ -12,6 +12,8 @@ import { CardSchedulingModule } from 'src/app/shared/components/card-scheduling/
 import { SchedulingViewUserComponent } from './pages/scheduling-user/partials/scheduling-view-user/scheduling-view-user.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { SchedulingResultUserComponent } from './pages/scheduling-user/partials/scheduling-result-user/scheduling-result-user.component';
+import { SchedulingViewProfessionalComponent } from './pages/scheduling-professional/partials/scheduling-view-professional/scheduling-view-professional.component';
+import { SchedulingResultProfessionalComponent } from './pages/scheduling-professional/partials/scheduling-result-professional/scheduling-result-professional.component';
 
 @NgModule({
     imports: [
@@ -30,6 +32,8 @@ import { SchedulingResultUserComponent } from './pages/scheduling-user/partials/
         SchedulingExplorerComponent,
         SchedulingViewUserComponent,
         SchedulingResultUserComponent,
+        SchedulingViewProfessionalComponent,
+        SchedulingResultProfessionalComponent,
     ],
 })
 export class SchedulingModule {}
