@@ -15,4 +15,8 @@ export class OnboardOneComponent {
     public goToRegisterProfessional(): void {
         this.router.navigate(['/professional/register']);
     }
+
+    public goToLogin(): void {
+        this.router.navigate(['/auth/login']);
+    }
 }

@@ -4,7 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
     {
         path: '',
-        loadChildren: () => import('./modules/landpage/landpage.module').then((m) => m.LandpageModule),
+        redirectTo: 'onboarding',
+        pathMatch: 'full',
     },
     {
         path: 'onboarding',
@@ -23,7 +24,11 @@ const routes: Routes = [
         loadChildren: () => import('./modules/professional/professional.module').then((m) => m.ProfessionalModule),
     },
     {
-        redirectTo: '',
+        path: 'scheduling',
+        loadChildren: () => import('./modules/scheduling/scheduling.module').then((m) => m.SchedulingModule),
+    },
+    {
+        redirectTo: 'onboarding',
         path: '**',
     }
 ];

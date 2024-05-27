@@ -1,0 +1,25 @@
+<app-scheduling-wrapper>
+    <div class="scheduling">
+        <div class="scheduling__welcome">
+            <h1>Olá, {{ username }}</h1>
+            <p>😊 Seu perfil está disponível para os voluntários.</p>
+            <p>✉️ Você poderá receber um e-mail dos voluntários para marcar um atendimento.</p>
+            <p>👇 Você também pode agendar um atendimento logo abaixo.</p>
+        </div>
+        <hr class="scheduling__line">
+        <app-scheduling-explorer
+            title="Agende seu atendimento"
+            description="Explore os perfis dos voluntários abaixo. Clique nos cards para agendar sua consulta."
+        >
+            <div class="scheduling__list">
+                <ng-container *ngFor="let item of data">
+                    <app-card-scheduling
+                        [title]="item.name"
+                        [description]="item.occupation"
+                        [platforms]="item.platforms"
+                    ></app-card-scheduling>
+                </ng-container>
+            </div>
+        </app-scheduling-explorer>
+    </div>
+</app-scheduling-wrapper>
