@@ -1,11 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { OnboardComponent } from './onboard.component';
+import { OnboardOneComponent } from './partials/onboard-one/onboard-one.component';
+import { OnboardTwoComponent } from './partials/onboard-two/onboard-two.component';
+import { OnboardRegisterComponent } from './partials/onboard-register/onboard-register.component';
 
 const routes: Routes = [
     {
+        path: 'one',
+        component: OnboardOneComponent
+    },
+    {
+        path: 'two',
+        component: OnboardTwoComponent
+    },
+    {
+        path: 'register-history',
+        component: OnboardRegisterComponent
+    },
+    {
         path: '',
-        component: OnboardComponent
+        redirectTo: 'one',
+        pathMatch: 'full'
     }
 ];
 

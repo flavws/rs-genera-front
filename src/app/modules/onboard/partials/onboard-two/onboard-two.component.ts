@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DialogAnimationsComponent } from './components/dialog-animations/dialog-animations.component';
@@ -9,11 +9,6 @@ import { DialogAnimationsComponent } from './components/dialog-animations/dialog
     styleUrls: ['./onboard-two.component.scss'],
 })
 export class OnboardTwoComponent {
-    @Output()
-    public clickChange: EventEmitter<void> = new EventEmitter<void>();
-
-    @Output()
-    public previousChange: EventEmitter<void> = new EventEmitter<void>();
 
     public constructor(public dialog: MatDialog, private router: Router) {}
 
@@ -26,5 +21,9 @@ export class OnboardTwoComponent {
             enterAnimationDuration,
             exitAnimationDuration,
         });
+    }
+
+    public goToBackUrl(): void {
+        this.router.navigate(['/onboarding/one']);
     }
 }

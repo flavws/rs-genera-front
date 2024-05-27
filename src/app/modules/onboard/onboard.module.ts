@@ -3,11 +3,9 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { OnboardRoutingModule } from './onboard-routing.module';
-import { OnboardComponent } from './onboard.component';
 import { OnboardOneComponent } from './partials/onboard-one/onboard-one.component';
 import { OnboardTwoComponent } from './partials/onboard-two/onboard-two.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
-import { StepManagerService } from './services/step-manager.service';
 import { MatIconModule } from '@angular/material/icon';
 import { OnboardRegisterComponent } from './partials/onboard-register/onboard-register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -30,13 +28,12 @@ import { DialogAnimationsComponent } from './partials/onboard-two/components/dia
         MatDialogModule,
     ],
     declarations: [
-        OnboardComponent,
         OnboardOneComponent,
         OnboardTwoComponent,
         WrapperComponent,
         OnboardRegisterComponent,
         DialogAnimationsComponent,
     ],
-    providers: [StepManagerService],
+    providers: [],
 })
 export class OnboardModule {}
