@@ -1,0 +1,127 @@
+body{
+    width: 430px;
+    height: 932px;
+    top: 4694px;
+    left: -421px;
+    gap: 0px;
+    opacity: 0px;
+    background: rgba(255, 255, 255, 1);
+}
+.voltar {
+    margin: 40px;
+    border: none;
+    width: 57px;
+    height: 16px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 1.25px;
+    text-align: left;
+    background:none;
+    color: rgba(0, 0, 0, 0.87);
+}
+.sair{
+    margin: 30px;
+    border: none;
+    width: 49px;
+    height: 24px;
+    padding: 4px 8px 4px 6px;
+    gap: 10px;
+    opacity: 0px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 1.25px;
+    text-align: left;
+    background: none;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.fotoprofisssional{
+    margin: center;
+    width: 140px;
+    height: 140px;
+    gap: 0px;
+    opacity: 0px;    
+}
+
+h1{
+    width: 153px;
+    height: 24px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.15000000596046448px;
+    text-align: left;
+}
+
+.profissao{
+    width: 67px;
+    height: 24px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.10000000149011612px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.6);
+}
+.ndoc{
+    width: 100px;
+    height: 24px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.10000000149011612px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.6);
+}
+div{
+    display: inline-block;
+    width: 62px;
+    height: 32px;
+    padding: 4px 4px 4px 4px;
+    gap: 0px;
+    border-radius: 16px 16px 16px 16px;
+    opacity: 0px;
+    background: rgba(33, 33, 33, 0.08);
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.87);
+}
+.agendar{
+    margin: 24px;
+    border: none;
+    width: 366px;
+    height: 36px;
+    padding: 6px 6px 6px 8px;
+    gap: 0px;
+    border-radius: 4px 4px 4px 4px;
+    opacity: 0px;
+    background: rgba(168, 217, 178, 1);
+    font-family: Roboto;
+    font-size: 14px;
+
+    
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 1.25px;
+    text-align: center;
+
+}

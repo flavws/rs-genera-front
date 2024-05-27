@@ -1,0 +1,74 @@
+body{
+    width: 430px;
+    height: 932px;
+    top: 788px;
+    left: 767px;
+    gap: 0px;
+    opacity: 0px;
+    background: #FFFFFF;
+}
+img{
+    width: 366px;
+    height: 284px;
+    top: 48px;
+    left: 32px;
+    gap: 0px;
+    opacity: 0px;
+
+}
+h1 {
+    width: 214px;
+    height: 24px;
+    top: 364px;
+    left: 32px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.18000000715255737px;
+    text-align: left;
+    color: #000000DE;
+}
+p{
+    width: 366px;
+    height: 192px;
+    top: 404px;
+    left: 32px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+button{
+    border: none;
+    width: 366px;
+    height: 36px;
+    top: 620px;
+    left: 32px;
+    gap: 0px;
+    opacity: 0px;
+    padding: 6px 6px 6px 8px;
+    gap: 0px;
+    border-radius: 4px 4px 4px 4px;
+    opacity: 0px;
+    background: rgba(168, 217, 178, 1); 
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: bold;
+    font:500;
+    line-height: 16px;
+    letter-spacing: 1.25px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.87);
+
+
+}
+
