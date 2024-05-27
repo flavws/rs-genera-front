@@ -25,4 +25,8 @@
         background-color: $terciary !important;
         @include disabled;
     }
+
+    &-link {
+        @include disabled;
+    }
 }

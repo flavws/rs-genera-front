@@ -3,14 +3,8 @@
         <div class="wrapper">
             <div class="avatar"></div>
             <h1>{{ data.name }}</h1>
-            <small>{{ data.occupation }}</small>
-            <span>{{ data.crmCrp }}</span>
-            <div class="chips">
-                <mat-chip-set>
-                    <mat-chip *ngFor="let item of data.platforms">
-                        {{ item }}
-                    </mat-chip>
-                </mat-chip-set>
+            <div class="text-history">
+                <p>{{ data.history }}</p>
             </div>
         </div>
         <button mat-flat-button class="w-100 btn btn-primary" (click)="goToResult()">

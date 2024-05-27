@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { StepManagerService } from '../services/step-manager.service';
 
 @Component({
     selector: 'app-wrapper',
@@ -18,6 +17,4 @@ export class WrapperComponent {
 
     @Output()
     public previousChange: EventEmitter<void> = new EventEmitter<void>();
-
-    public constructor(public stepManagerService: StepManagerService) {}
 }

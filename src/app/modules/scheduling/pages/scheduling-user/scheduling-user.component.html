@@ -1,4 +1,4 @@
-<app-scheduling-wrapper>
+<app-scheduling-wrapper (logoutChange)="goToLogin()">
     <div class="scheduling">
         <div class="scheduling__welcome">
             <h1>Olá, {{ username }}</h1>
@@ -17,6 +17,7 @@
                         [title]="item.name"
                         [description]="item.occupation"
                         [platforms]="item.platforms"
+                        (clickChanges)="goToView(item.id)"
                     ></app-card-scheduling>
                 </ng-container>
             </div>

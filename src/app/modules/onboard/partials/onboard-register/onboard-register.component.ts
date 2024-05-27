@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -8,12 +8,6 @@ import { Router } from '@angular/router';
     styleUrls: ['./onboard-register.component.scss'],
 })
 export class OnboardRegisterComponent {
-    @Output()
-    public clickChange: EventEmitter<void> = new EventEmitter<void>();
-
-    @Output()
-    public previousChange: EventEmitter<void> = new EventEmitter<void>();
-
     public form: FormGroup = new FormGroup({
         name: new FormControl('', [Validators.required]),
         isAnonymous: new FormControl(false),
@@ -23,10 +17,13 @@ export class OnboardRegisterComponent {
 
     public constructor(private router: Router) {}
 
+    public goToBackUrl(): void {
+        this.router.navigate(['/onboarding/two']);
+    }
+
     public sendData(): void {
         if (this.form.valid) {
             // Send data to the server
-            this.clickChange.emit();
             this.router.navigate(['/feedbacks/history-success']);
         }
     }

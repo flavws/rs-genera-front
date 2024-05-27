@@ -1,6 +1,6 @@
 <div class="wrapper animate__animated animate__fadeInLeft">
     <div class="container">
-        <div class="actions">
+        <div class="actions" [ngStyle]="previousBtn ? {'justify-content': 'space-between'} : {'justify-content': 'flex-end'}">
             <ng-container *ngIf="previousBtn">
                 <button mat-flat-button class="btn-previous" (click)="previousChange.emit()">
                     <mat-icon>arrow_back</mat-icon>
