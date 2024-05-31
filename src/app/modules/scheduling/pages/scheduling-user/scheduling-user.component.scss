@@ -29,5 +29,20 @@
         display: flex;
         flex-direction: column;
         row-gap: 24px;
+
+        .alert {
+            width: 100%;
+            padding: 20px;
+            background-color: $terciary;
+            border-radius: 6px;
+
+            p {
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 0.5px;
+                color:  #00000099;
+                margin: 0px;
+            }
+        }
     }
 }

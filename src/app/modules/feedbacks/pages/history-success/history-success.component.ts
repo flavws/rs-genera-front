@@ -10,6 +10,6 @@ export class HistorySuccessComponent {
     public constructor(private router: Router) {}
 
     public goToLogin(): void {
-        this.router.navigate(['/auth/login']);
+        this.router.navigate(['/onboarding/one']);
     }
 }

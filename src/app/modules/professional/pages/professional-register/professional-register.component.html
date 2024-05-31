@@ -18,13 +18,6 @@
                         Campo é obrigatório
                     </mat-error>
                 </mat-form-field>
-                <!-- <mat-form-field appearance="outline" class="form-control" [hideRequiredMarker]="true">
-                    <mat-label>Foto</mat-label>
-                    <input type="file" matInput formControlName="photo">
-                    <mat-error *ngIf="form.get('photo')?.hasError('required')">
-                        Campo é obrigatório
-                    </mat-error>
-                </mat-form-field> -->
                 <mat-form-field appearance="outline" class="form-control" [hideRequiredMarker]="true">
                     <mat-label>Escolha a sua área de atuação</mat-label>
                     <input type="text" matInput formControlName="occupationArea" [matAutocomplete]="auto">
@@ -41,6 +34,20 @@
                     <mat-label>Insira seu registro (CRM, CRP, etc)</mat-label>
                     <input type="text" matInput formControlName="register_profissional">
                     <mat-error *ngIf="form.get('register_profissional')?.hasError('required')">
+                        Campo é obrigatório
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="form-control" [hideRequiredMarker]="true">
+                    <mat-label>Insira seu e-mail</mat-label>
+                    <input type="email" matInput formControlName="email">
+                    <mat-error *ngIf="form.get('email')?.hasError('required')">
+                        Campo é obrigatório
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="form-control" [hideRequiredMarker]="true">
+                    <mat-label>Insira sua senha</mat-label>
+                    <input type="password" matInput formControlName="password">
+                    <mat-error *ngIf="form.get('password')?.hasError('required')">
                         Campo é obrigatório
                     </mat-error>
                 </mat-form-field>

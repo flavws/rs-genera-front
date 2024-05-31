@@ -12,14 +12,21 @@
             description="Explore os perfis dos voluntários abaixo. Clique nos cards para agendar sua consulta."
         >
             <div class="scheduling__list">
-                <ng-container *ngFor="let item of data">
-                    <app-card-scheduling
-                        [title]="item.name"
-                        [description]="item.occupation"
-                        [platforms]="item.platforms"
-                        (clickChanges)="goToView(item.id)"
-                    ></app-card-scheduling>
+                <ng-container *ngIf="data && data.length > 0; else notEmpty">
+                    <ng-container *ngFor="let item of data">
+                        <app-card-scheduling
+                            [title]="item.name"
+                            [description]="item.occupation_area"
+                            [platforms]="item.platforms"
+                            (clickChanges)="goToView(item.id)"
+                        ></app-card-scheduling>
+                    </ng-container>
                 </ng-container>
+                <ng-template #notEmpty>
+                    <div class="alert">
+                        <p>Desculpa! Ainda não tem nenhum profissional voluntário disponível para te atender.</p>
+                    </div>
+                </ng-template>
             </div>
         </app-scheduling-explorer>
     </div>

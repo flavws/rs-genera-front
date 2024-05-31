@@ -1,23 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { Router } from '@angular/router';
-import { map, Observable, startWith } from 'rxjs';
+import { map, Observable, startWith, Subject, takeUntil } from 'rxjs';
+import { ProfissionalInterface } from 'src/app/shared/interfaces/profissional.interface';
+import { SnackbarService } from 'src/app/shared/services/components/snackbar/snackbar.service';
+import { ProfissionalService } from 'src/app/shared/services/http/profissional/profissional.service';
 
 @Component({
     selector: 'app-professional-register',
     templateUrl: './professional-register.component.html',
     styleUrls: ['./professional-register.component.scss'],
 })
-export class ProfessionalRegisterComponent implements OnInit {
+export class ProfessionalRegisterComponent implements OnInit, OnDestroy {
     private platforms: string[] = [];
 
     public form: FormGroup = new FormGroup({
         name: new FormControl('', [Validators.required]),
-        // photo: new FormControl(''),
         occupationArea: new FormControl('', [Validators.required]),
         register_profissional: new FormControl(''),
         platforms: new FormControl(undefined, [Validators.required]),
+        email: new FormControl('', [Validators.required, Validators.email]),
+        password: new FormControl('', [Validators.required]),
     });
 
     public options: string[] = [
@@ -29,7 +33,20 @@ export class ProfessionalRegisterComponent implements OnInit {
 
     public filteredOptions: Observable<string[]>;
 
-    public constructor(private router: Router) {}
+    public _subscriber$: Subject<void> = new Subject<void>();
+
+    public constructor(
+        private router: Router,
+        private _snackBar: SnackbarService,
+        private service: ProfissionalService
+    ) {}
+
+    public ngOnDestroy(): void {
+        if (this._subscriber$.observed) {
+            this._subscriber$.next();
+            this._subscriber$.complete();
+        }
+    }
 
     public ngOnInit() {
         this.filteredOptions = this.form.get('occupationArea')?.valueChanges.pipe(
@@ -64,9 +81,30 @@ export class ProfessionalRegisterComponent implements OnInit {
 
     public sendData(): void {
         if (this.form.valid) {
-            // Send data to the server
-            console.log(this.form.value);
-            this.router.navigate(['/feedbacks/register-profissional-success']);
+            const data: ProfissionalInterface = {
+                name: this.form.get('name')?.value as string,
+                occupation_area: this.form.get('occupationArea')?.value,
+                professional_record: this.form.get('register_profissional')?.value,
+                platforms: this.form.get('platforms')?.value,
+                email: this.form.get('email')?.value,
+                password: this.form.get('password')?.value,
+            }
+            this.service.add(data).pipe(takeUntil(this._subscriber$)).subscribe({
+                next: () => {
+                    this.router.navigate(['/feedbacks/register-profissional-success']);
+                },
+                error: (err) => {
+                    this._snackBar.open(
+                        `
+                        ${err.error?.message || err.message || err.error || err}
+                        `
+                    );
+                },
+            });
+        } else {
+            this._snackBar.open(
+                `Formulário inválido.`
+            );
         }
     }
 

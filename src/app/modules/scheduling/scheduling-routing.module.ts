@@ -6,6 +6,8 @@ import { SchedulingViewUserComponent } from './pages/scheduling-user/partials/sc
 import { SchedulingResultUserComponent } from './pages/scheduling-user/partials/scheduling-result-user/scheduling-result-user.component';
 import { SchedulingViewProfessionalComponent } from './pages/scheduling-professional/partials/scheduling-view-professional/scheduling-view-professional.component';
 import { SchedulingResultProfessionalComponent } from './pages/scheduling-professional/partials/scheduling-result-professional/scheduling-result-professional.component';
+import { UserGuard } from 'src/app/guards/user.guard';
+import { ProfessionalGuard } from 'src/app/guards/professional.guard';
 
 const routes: Routes = [
     {
@@ -20,10 +22,12 @@ const routes: Routes = [
                 component: SchedulingViewUserComponent
             },
         ],
+        canActivate: [UserGuard],
     },
     {
         path: 'scheduling-user-result',
-        component: SchedulingResultUserComponent
+        component: SchedulingResultUserComponent,
+        canActivate: [UserGuard],
     },
     {
         path: 'scheduling-profissional',
@@ -37,10 +41,12 @@ const routes: Routes = [
                 component: SchedulingViewProfessionalComponent
             },
         ],
+        canActivate: [ProfessionalGuard],
     },
     {
         path: 'scheduling-profissional-result',
-        component: SchedulingResultProfessionalComponent
+        component: SchedulingResultProfessionalComponent,
+        canActivate: [ProfessionalGuard],
     },
     {
         path: '',

@@ -27,5 +27,16 @@
         flex-direction: column;
         margin-top: 32px;
         row-gap: 32px;
+
+        .icon {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            img {
+                width: 250px;
+                margin: 0 auto;
+            }
+        }
     }
 }

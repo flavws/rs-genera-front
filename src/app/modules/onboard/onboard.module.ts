@@ -25,7 +25,7 @@ import { DialogAnimationsComponent } from './partials/onboard-two/components/dia
         ReactiveFormsModule,
         MatFormFieldModule,
         MatCheckboxModule,
-        MatDialogModule,
+        MatDialogModule
     ],
     declarations: [
         OnboardOneComponent,
