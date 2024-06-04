@@ -16,6 +16,7 @@
                     <ng-container *ngFor="let item of data">
                         <app-card-scheduling
                             [title]="item.name"
+                            txtButton="Visualizar detalhes"
                             (clickChanges)="goToView(item.id)"
                         >
                         <div history class="history-container">

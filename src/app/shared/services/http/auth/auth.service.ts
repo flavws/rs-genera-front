@@ -50,6 +50,8 @@ export class AuthService {
 
     private removeDataFromLocalStorage(): void {
         localStorage.removeItem('user');
+        localStorage.removeItem('userName');
+        localStorage.removeItem('professional');
     }
 
 }

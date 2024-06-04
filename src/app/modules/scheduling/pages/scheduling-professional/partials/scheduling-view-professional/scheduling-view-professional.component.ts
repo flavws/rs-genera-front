@@ -3,8 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { SchedulingInterface } from 'src/app/shared/interfaces/scheduling.interface';
 import { SnackbarService } from 'src/app/shared/services/components/snackbar/snackbar.service';
+import { AuthService } from 'src/app/shared/services/http/auth/auth.service';
 import { PersonService } from 'src/app/shared/services/http/person/person.service';
 import { SchedulingService } from 'src/app/shared/services/http/scheduling/scheduling.service';
+import { StorageService } from 'src/app/shared/services/utils/storage.service';
 
 @Component({
     selector: 'app-scheduling-view-professional',
@@ -61,7 +63,9 @@ export class SchedulingViewProfessionalComponent implements AfterContentInit, On
         private activateRoute: ActivatedRoute,
         private personService: PersonService,
         private schedulingService: SchedulingService,
-        private _snackBar: SnackbarService
+        private _snackBar: SnackbarService,
+        private storageService: StorageService,
+        private authService: AuthService,
     ) {}
 
     public ngAfterContentInit(): void {
@@ -88,6 +92,7 @@ export class SchedulingViewProfessionalComponent implements AfterContentInit, On
                     name: person[0].name,
                     history: person[0].history as string
                 };
+                this.storageService.saveUser(this.data.name);
             });
         } else {
             this._snackBar.open('Ops! Pessoa não pode ser encontrada.')
@@ -98,11 +103,14 @@ export class SchedulingViewProfessionalComponent implements AfterContentInit, On
     }
 
     public goToLogin(): void {
-        this.router.navigate(['/auth/login']);
+        this.authService.logout().pipe(takeUntil(this._destroy$)).subscribe(() => {
+            this.router.navigate(['/auth/login']);
+        });
     }
 
     public goToInitial(): void {
         this.router.navigate(['/scheduling/scheduling-profissional']);
+        this.storageService.deleteUser();
     }
 
     public goToResult(person_id: number): void {
@@ -125,6 +133,7 @@ export class SchedulingViewProfessionalComponent implements AfterContentInit, On
                         ${err.error?.message || err.message || err.error || err}
                         `
                     );
+                    this.storageService.deleteUser();
                 }
             })
         }
