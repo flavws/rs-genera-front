@@ -16,8 +16,8 @@ export class ProfissionalService {
         return this.http.get<ProfissionalInterface[]>(`${environment.baseUrl}/professionals`);
     }
 
-    public get(id: number): Observable<ProfissionalInterface> {
-        return this.http.get<ProfissionalInterface>(`${environment.baseUrl}/professionals/${id}`);
+    public get(id: number): Observable<ProfissionalInterface[]> {
+        return this.http.get<ProfissionalInterface[]>(`${environment.baseUrl}/professionals/${id}`);
     }
 
     public add(data: ProfissionalInterface): Observable<ProfissionalInterface[]> {
