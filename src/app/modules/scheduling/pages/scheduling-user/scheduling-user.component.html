@@ -16,6 +16,7 @@
                     <ng-container *ngFor="let item of data">
                         <app-card-scheduling
                             [title]="item.name"
+                            txtButton="Visualizar detalhes"
                             [description]="item.occupation_area"
                             [platforms]="item.platforms"
                             (clickChanges)="goToView(item.id)"
