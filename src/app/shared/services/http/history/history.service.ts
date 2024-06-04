@@ -12,23 +12,23 @@ export class HistoryService {
 
     constructor(private http: HttpClient) {}
 
-    public getAll(): Observable<ResponseInterface<HistoryInterface[]>> {
-        return this.http.get<ResponseInterface<HistoryInterface[]>>(`${environment.baseUrl}/historys`);
+    public getAll(): Observable<HistoryInterface[]> {
+        return this.http.get<HistoryInterface[]>(`${environment.baseUrl}/historys`);
     }
 
-    public get(id: number): Observable<ResponseInterface<HistoryInterface>> {
-        return this.http.get<ResponseInterface<HistoryInterface>>(`${environment.baseUrl}/historys/${id}`);
+    public get(id: number): Observable<HistoryInterface> {
+        return this.http.get<HistoryInterface>(`${environment.baseUrl}/historys/${id}`);
     }
 
-    public add(data: HistoryInterface): Observable<ResponseInterface<HistoryInterface>> {
-        return this.http.post<ResponseInterface<HistoryInterface>>(`${environment.baseUrl}/historys`, data);
+    public add(data: HistoryInterface): Observable<HistoryInterface> {
+        return this.http.post<HistoryInterface>(`${environment.baseUrl}/historys`, data);
     }
 
-    public put(id: number, data: HistoryInterface): Observable<ResponseInterface<HistoryInterface>> {
-        return this.http.put<ResponseInterface<HistoryInterface>>(`${environment.baseUrl}/historys/${id}`, { data });
+    public put(id: number, data: HistoryInterface): Observable<HistoryInterface> {
+        return this.http.put<HistoryInterface>(`${environment.baseUrl}/historys/${id}`, { data });
     }
 
-    public delete(id: number): Observable<ResponseInterface<HistoryInterface>> {
-        return this.http.delete<ResponseInterface<HistoryInterface>>(`${environment.baseUrl}/historys/${id}`);
+    public delete(id: number): Observable<HistoryInterface> {
+        return this.http.delete<HistoryInterface>(`${environment.baseUrl}/historys/${id}`);
     }
 }

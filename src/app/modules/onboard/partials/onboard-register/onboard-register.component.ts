@@ -53,7 +53,7 @@ export class OnboardRegisterComponent implements OnDestroy {
                 error: (err) => {
                     this._snackBar.open(
                         `
-                        ${err.error.message || err.message || err.error || err}
+                        ${err.error?.message || err.message || err.error || err}
                         `
                     );
                 },

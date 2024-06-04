@@ -18,7 +18,9 @@
                             [title]="item.name"
                             (clickChanges)="goToView(item.id)"
                         >
-                            <p history>{{item.history}}</p>
+                        <div history class="history-container">
+                            <p>{{item.history}}</p>
+                        </div>
                         </app-card-scheduling>
                     </ng-container>
                 </ng-container>

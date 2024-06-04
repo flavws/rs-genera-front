@@ -16,8 +16,8 @@ export class PersonService {
         return this.http.get<PersonInterface[]>(`${environment.baseUrl}/persons`);
     }
 
-    public get(id: number): Observable<PersonInterface> {
-        return this.http.get<PersonInterface>(`${environment.baseUrl}/persons/${id}`);
+    public get(id: number): Observable<PersonInterface[]> {
+        return this.http.get<PersonInterface[]>(`${environment.baseUrl}/persons/${id}`);
     }
 
     public add(data: PersonInterface): Observable<PersonInterface> {

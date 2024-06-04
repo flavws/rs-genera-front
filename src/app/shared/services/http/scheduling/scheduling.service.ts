@@ -12,23 +12,23 @@ export class SchedulingService {
 
     constructor(private http: HttpClient) {}
 
-    public getAll(): Observable<ResponseInterface<SchedulingInterface[]>> {
-        return this.http.get<ResponseInterface<SchedulingInterface[]>>(`${environment.baseUrl}/scheduling`);
+    public getAll(): Observable<SchedulingInterface[]> {
+        return this.http.get<SchedulingInterface[]>(`${environment.baseUrl}/schedulings`);
     }
 
-    public get(id: number): Observable<ResponseInterface<SchedulingInterface>> {
-        return this.http.get<ResponseInterface<SchedulingInterface>>(`${environment.baseUrl}/scheduling/${id}`);
+    public get(id: number): Observable<SchedulingInterface> {
+        return this.http.get<SchedulingInterface>(`${environment.baseUrl}/schedulings/${id}`);
     }
 
-    public add(data: SchedulingInterface): Observable<ResponseInterface<SchedulingInterface>> {
-        return this.http.post<ResponseInterface<SchedulingInterface>>(`${environment.baseUrl}/scheduling`, { data });
+    public add(data: SchedulingInterface): Observable<SchedulingInterface> {
+        return this.http.post<SchedulingInterface>(`${environment.baseUrl}/schedulings`, data);
     }
 
-    public put(id: number, data: SchedulingInterface): Observable<ResponseInterface<SchedulingInterface>> {
-        return this.http.put<ResponseInterface<SchedulingInterface>>(`${environment.baseUrl}/scheduling/${id}`, { data });
+    public put(id: number, data: SchedulingInterface): Observable<SchedulingInterface> {
+        return this.http.put<SchedulingInterface>(`${environment.baseUrl}/schedulings/${id}`, { data });
     }
 
-    public delete(id: number): Observable<ResponseInterface<SchedulingInterface>> {
-        return this.http.delete<ResponseInterface<SchedulingInterface>>(`${environment.baseUrl}/scheduling/${id}`);
+    public delete(id: number): Observable<SchedulingInterface> {
+        return this.http.delete<SchedulingInterface>(`${environment.baseUrl}/schedulings/${id}`);
     }
 }

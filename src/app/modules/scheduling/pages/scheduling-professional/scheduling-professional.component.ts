@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { PersonInterface } from 'src/app/shared/interfaces/person.interface';
@@ -44,17 +44,19 @@ export class SchedulingProfessionalComponent implements OnDestroy {
         }
     ];
 
-    public username = 'Carlos Eduardo';
+    public username = 'Desconhecido';
 
     public _destroy$: Subject<void> = new Subject<void>();
 
     public constructor(
         private router: Router,
         private authService: AuthService,
-        private personService: PersonService
+        private personService: PersonService,
+        private cdRef: ChangeDetectorRef
     ) {}
 
     public ngAfterViewInit(): void {
+        this.loadingNameUser();
         this.loadingPersons();
     }
 
@@ -62,6 +64,14 @@ export class SchedulingProfessionalComponent implements OnDestroy {
         if (this._destroy$.observed) {
             this._destroy$.next();
             this._destroy$.complete();
+        }
+    }
+
+    public loadingNameUser(): void {
+        const data = localStorage.getItem('user') ?? null;
+        if (data) {
+            this.username = JSON.parse(data).name;
+            this.cdRef.detectChanges();
         }
     }
 
