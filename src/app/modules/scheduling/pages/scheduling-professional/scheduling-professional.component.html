@@ -1,0 +1,36 @@
+<app-scheduling-wrapper (logoutChange)="goToLogin()">
+    <div class="scheduling">
+        <div class="scheduling__welcome">
+            <h1>Olá, {{ username }}</h1>
+            <p>😊 Seu perfil como voluntário está disponível para os usuários.</p>
+            <p>✉️ Você poderá receber um e-mail dos usuários para marcar um atendimento.</p>
+            <p>👇 Você também pode agendar um atendimento logo abaixo.</p>
+        </div>
+        <hr class="scheduling__line">
+        <app-scheduling-explorer
+            title="Busque por usuários"
+            description="Explore as histórias e perfis dos usuários que buscam suporte emocional."
+        >
+            <div class="scheduling__list">
+                <ng-container *ngIf="data && data.length > 0; else notEmpty">
+                    <ng-container *ngFor="let item of data">
+                        <app-card-scheduling
+                            [title]="item.name"
+                            txtButton="Visualizar detalhes"
+                            (clickChanges)="goToView(item.id)"
+                        >
+                        <div history class="history-container">
+                            <p>{{item.history}}</p>
+                        </div>
+                        </app-card-scheduling>
+                    </ng-container>
+                </ng-container>
+                <ng-template #notEmpty>
+                    <div class="alert">
+                        <p>Desculpa! Ainda não tem nenhuma pessoa precisando de uma ajuda para você atender no momento.</p>
+                    </div>
+                </ng-template>
+            </div>
+        </app-scheduling-explorer>
+    </div>
+</app-scheduling-wrapper>

@@ -1,0 +1,21 @@
+
+.scheduling-explorer {
+    &__texts {
+        width: 100%;
+        height: auto;
+        margin-bottom: 24px;
+
+        h1 {
+            font-size: 24px;
+            line-height: 30px;
+            letter-spacing: 0.18px;
+        }
+
+        span {
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.5px;
+            color:  #00000099;
+        }
+    }
+}

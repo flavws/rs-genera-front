@@ -1,0 +1,22 @@
+<mat-card appearance="outlined" class="card-scheduling">
+    <mat-card-header class="card-scheduling__header">
+        <div mat-card-avatar class="avatar"></div>
+        <mat-card-title class="title">{{ title }}</mat-card-title>
+        <mat-card-subtitle class="description">{{ description }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="card-scheduling__content">
+        <ng-container *ngIf="platforms && platforms.length > 0">
+            <mat-chip-set>
+                <mat-chip *ngFor="let item of platforms">
+                    {{ item }}
+                </mat-chip>
+            </mat-chip-set>
+        </ng-container>
+        <ng-content select="[history]"></ng-content>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-flat-button class="w-100 btn btn-primary" (click)="clickChanges.emit(this.id)">
+            {{ txtButton }}
+        </button>
+    </mat-card-actions>
+</mat-card>

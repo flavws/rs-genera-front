@@ -1,0 +1,48 @@
+@import '../../../../../assets/scss/colors';
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 32px;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 32px;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn-previous {
+        text-transform: uppercase;
+    }
+
+    .btn-logout {
+        flex-direction: row-reverse;
+        column-gap: 10px;
+        text-transform: uppercase;
+
+        mat-icon {
+            margin: 0px;
+        }
+    }
+
+    .content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 32px;
+        row-gap: 32px;
+    }
+}

@@ -1,0 +1,29 @@
+<app-scheduling-wrapper (previousChange)="goToInitial()" (logoutChange)="goToLogin()">
+    <div class="wrapper">
+        <div class="container">
+            <div class="content">
+                <div class="icon">
+                    <img src="/assets/svg/scheduling/scheduling1.svg" alt="alt">
+                </div>
+                <div class="wrapper__content">
+                    <div class="onboard">
+                        <div class="onboard__texts">
+                            <h1>Atendimento agendado!</h1>
+                            <p>
+                                Enviamos os detalhes para {{ voluntario }}, que agora está processando a solicitação.
+                                Aguarde a confirmação por e-mail.
+                            </p>
+                            <p>
+                                Fique atento à sua caixa de entrada para receber atualizações sobre o agendamento.
+                                Obrigado por escolher nossa plataforma
+                            </p>
+                        </div>
+                        <div class="onboard__actions">
+                            <button mat-flat-button class="w-100 btn btn-primary" (click)="goToInitial()">Voltar para a página inicial</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-scheduling-wrapper>

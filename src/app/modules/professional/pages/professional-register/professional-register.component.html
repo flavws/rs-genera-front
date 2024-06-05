@@ -1,0 +1,70 @@
+<app-wrapper-container pathIcon="assets/svg/professional/professional1.svg" [previousBtn]="true" (previousChange)="goToInitial()">
+    <div class="onboard">
+        <div class="onboard__texts">
+            <h1>Cadastre-se como voluntário</h1>
+            <p>
+                Junte-se à nossa comunidade de profissionais voluntários e ajude a transformar vidas.
+            </p>
+            <p>
+                Preencha os campos abaixo para se cadastrar e começar a oferecer suporte emocional.
+            </p>
+        </div>
+        <div class="onboard__actions">
+            <form [formGroup]="form">
+                <mat-form-field appearance="outline" class="form-control" [hideRequiredMarker]="true">
+                    <mat-label>Nome</mat-label>
+                    <input type="text" matInput formControlName="name">
+                    <mat-error *ngIf="form.get('name')?.hasError('required')">
+                        Campo é obrigatório
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="form-control" [hideRequiredMarker]="true">
+                    <mat-label>Escolha a sua área de atuação</mat-label>
+                    <input type="text" matInput formControlName="occupationArea" [matAutocomplete]="auto">
+                    <mat-error *ngIf="form.get('occupationArea')?.hasError('required')">
+                        Campo é obrigatório
+                    </mat-error>
+                    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                          {{option}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="form-control" [hideRequiredMarker]="true">
+                    <mat-label>Insira seu registro (CRM, CRP, etc)</mat-label>
+                    <input type="text" matInput formControlName="register_profissional">
+                    <mat-error *ngIf="form.get('register_profissional')?.hasError('required')">
+                        Campo é obrigatório
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="form-control" [hideRequiredMarker]="true">
+                    <mat-label>Insira seu e-mail</mat-label>
+                    <input type="email" matInput formControlName="email">
+                    <mat-error *ngIf="form.get('email')?.hasError('required')">
+                        Campo é obrigatório
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="form-control" [hideRequiredMarker]="true">
+                    <mat-label>Insira sua senha</mat-label>
+                    <input type="password" matInput formControlName="password">
+                    <mat-error *ngIf="form.get('password')?.hasError('required')">
+                        Campo é obrigatório
+                    </mat-error>
+                </mat-form-field>
+                <div class="occupations-checkbox">
+                    <mat-label>Em quais plataformas você deseja oferecer atendimento?</mat-label>
+                    <mat-checkbox class="form-checkbox" (change)="getPlatforms('Zoom', $event)">Zoom</mat-checkbox>
+                    <mat-checkbox class="form-checkbox" (change)="getPlatforms('Meet', $event)">Meet</mat-checkbox>
+                    <mat-checkbox class="form-checkbox" (change)="getPlatforms('Teams', $event)">Teams</mat-checkbox>
+                </div>
+            </form>
+            <button mat-flat-button
+                color="primary"
+                class="w-100 btn btn-primary"
+                (click)="sendData()"
+                [disabled]="form.invalid">
+                Cadastrar
+            </button>
+        </div>
+    </div>
+</app-wrapper-container>

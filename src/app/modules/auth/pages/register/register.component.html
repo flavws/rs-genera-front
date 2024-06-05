@@ -1,0 +1,57 @@
+<div class="wrapper animate__animated animate__fadeInLeft">
+    <div class="container">
+        <button mat-flat-button class="btn-previous" routerLink="/onboarding/two">
+            <mat-icon>arrow_back</mat-icon>
+            Voltar
+        </button>
+        <div class="content">
+            <div class="icon">
+                <img src="/assets/svg/auth/image1.svg" alt="User">
+            </div>
+            <div class="wrapper__content">
+                <div class="onboard">
+                    <div class="onboard__texts">
+                        <h1>Cadastre-se na plataforma</h1>
+                        <p>
+                            Para começar a se conectar com profissionais voluntários,
+                            complete seu cadastro preenchendo os campos abaixo.
+                        </p>
+                    </div>
+                    <div class="onboard__actions">
+                        <form [formGroup]="form">
+                            <mat-form-field appearance="outline" class="form-control" [hideRequiredMarker]="true">
+                                <mat-label>Nome</mat-label>
+                                <input type="text" matInput formControlName="name">
+                                <mat-error *ngIf="form.get('name')?.hasError('required')">
+                                    Campo é obrigatório
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-checkbox formControlName="isAnonymous" class="form-checkbox">Não quero compartilhar meu nome</mat-checkbox>
+                            <mat-form-field appearance="outline" class="form-control" [hideRequiredMarker]="true">
+                                <mat-label>Insira seu e-mail</mat-label>
+                                <input type="email" matInput formControlName="email">
+                                <mat-error *ngIf="form.get('email')?.hasError('required')">
+                                    Campo é obrigatório
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="form-control" [hideRequiredMarker]="true">
+                                <mat-label>Insira sua senha</mat-label>
+                                <input type="password" matInput formControlName="password">
+                                <mat-error *ngIf="form.get('password')?.hasError('required')">
+                                    Campo é obrigatório
+                                </mat-error>
+                            </mat-form-field>
+                        </form>
+                        <button mat-flat-button
+                            color="primary"
+                            class="w-100 btn btn-primary"
+                            [disabled]="form.invalid"
+                            (click)="sendData()">
+                            Cadastrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

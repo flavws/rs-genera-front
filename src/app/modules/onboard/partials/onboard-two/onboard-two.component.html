@@ -1,0 +1,16 @@
+<app-wrapper pathIcon="assets/svg/onboard/memories2.svg" [previousBtn]="true" (previousChange)="goToBackUrl()">
+    <div class="onboard">
+        <div class="onboard__texts">
+            <h1>Compartilhe a sua história</h1>
+            <p>
+                No meio da tragédia, cada memória e objeto têm um valor único.
+                Compartilhe conosco sua história para que possamos ajudar a
+                resignificá-la através da arte e do suporte emocional.
+            </p>
+        </div>
+        <div class="onboard__actions">
+            <button mat-flat-button class="w-100 btn btn-primary" routerLink="/onboarding/register-history">Cadastrar história</button>
+            <button mat-flat-button class="w-100 btn btn-link" (click)="openDialog('0ms', '0ms')">Pular</button>
+        </div>
+    </div>
+</app-wrapper>

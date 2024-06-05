@@ -3,8 +3,9 @@
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve",
-        "build": "ng build",
+        "start": "ng serve --host 0.0.0.0 --disable-host-check --configuration development",
+        "dev": "ng build --configuration development --configuration development",
+        "build": "ng build --aot --configuration production",
         "watch": "ng build --watch --configuration development",
         "test": "ng test"
     },
@@ -21,6 +22,7 @@
         "@angular/platform-browser-dynamic": "^15.2.0",
         "@angular/router": "^15.2.0",
         "@angular/service-worker": "^15.2.0",
+        "animate.css": "^4.1.1",
         "rxjs": "~7.8.0",
         "tslib": "^2.3.0",
         "zone.js": "~0.12.0"

@@ -1,0 +1,40 @@
+@import '../../../../assets/scss/colors';
+
+.card-scheduling {
+    max-width: 400px;
+
+    &__header {
+        margin-bottom: 12px;
+    }
+
+    &__content {
+        margin-bottom: 12px;
+    }
+
+    .title {
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+    }
+
+    .description {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.25px;
+    }
+
+    .avatar {
+        background-image: url('../../../../assets/svg/avatar/image.svg');
+        background-size: cover;
+        margin: 0px;
+    }
+
+    .btn {
+        text-transform: uppercase;
+        font-size: 15px;
+        line-height: 16px;
+        letter-spacing: 1.25px;
+        font-weight: 500;
+        margin-bottom: 4px;
+    }
+}

@@ -1,0 +1,12 @@
+<div class="dialog">
+    <h1 mat-dialog-title>Deseja pular está etapa?</h1>
+    <p mat-dialog-content>
+        Ao pular esta etapa, você não poderá contar sua história
+        mais tarde. Você será direcionado para a tela
+        de cadastro para continuar com o processo.
+    </p>
+    <div mat-dialog-actions class="actions">
+        <button mat-button mat-dialog-close cdkFocusInitial class="btn btn-primary" (click)="goToRegister()">Pular etapa</button>
+        <button mat-button mat-dialog-close class="btn btn-link">Voltar</button>
+    </div>
+</div>

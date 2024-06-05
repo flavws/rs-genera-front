@@ -1,10 +1,12 @@
-version: '3'
+version: "3.5"
 
 services:
-    web:
-        build: .
-        container_name: rsgenera-frontend
+    website:
+        container_name: rsgenera-front
+        build:
+            context: .
+            dockerfile: ./Dockerfile
         ports:
-        - "80:80"
+            - "80:80"
         volumes:
-        - .:/usr/local/app/dist/rsgenera
+            - .:/usr/src/app

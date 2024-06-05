@@ -1,0 +1,21 @@
+<div class="wrapper animate__animated animate__fadeInLeft">
+    <div class="container">
+        <div class="actions" [ngStyle]="previousBtn ? {'justify-content': 'space-between'} : {'justify-content': 'flex-end'}">
+            <ng-container *ngIf="previousBtn">
+                <button mat-flat-button class="btn-previous" (click)="previousChange.emit()">
+                    <mat-icon>arrow_back</mat-icon>
+                    Voltar
+                </button>
+            </ng-container>
+            <button mat-flat-button class="btn-logout" (click)="logoutChange.emit()">
+                <mat-icon>close</mat-icon>
+                Sair
+            </button>
+        </div>
+        <div class="content">
+            <div class="wrapper__content">
+                <ng-content></ng-content>
+            </div>
+        </div>
+    </div>
+</div>

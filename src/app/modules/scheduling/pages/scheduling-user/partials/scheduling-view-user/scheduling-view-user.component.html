@@ -1,0 +1,20 @@
+<app-scheduling-wrapper [previousBtn]="true" (previousChange)="goToInitial()" (logoutChange)="goToLogin()">
+    <div class="scheduling">
+        <div class="wrapper">
+            <div class="avatar"></div>
+            <h1>{{ data.name }}</h1>
+            <small>{{ data.occupation }}</small>
+            <span>{{ data.crmCrp }}</span>
+            <div class="chips">
+                <mat-chip-set>
+                    <mat-chip *ngFor="let item of data.platforms">
+                        {{ item }}
+                    </mat-chip>
+                </mat-chip-set>
+            </div>
+        </div>
+        <button mat-flat-button class="w-100 btn btn-primary" (click)="goToResult(data.id)">
+            Agendar atendimento
+        </button>
+    </div>
+</app-scheduling-wrapper>

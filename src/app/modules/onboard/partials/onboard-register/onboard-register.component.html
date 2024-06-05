@@ -1,0 +1,54 @@
+<app-wrapper [previousBtn]="true" (previousChange)="goToBackUrl()">
+    <div class="onboard">
+        <div class="onboard__texts">
+            <h1>Compartilhe a sua história</h1>
+            <p>
+                Compartilhar sua história é o primeiro passo para a renovação.
+                Sua experiência é valiosa e pode inspirar outros.
+            </p>
+            <p>Por favor, preencha os campos abaixo para registrar sua história.</p>
+        </div>
+        <div class="onboard__actions">
+            <form [formGroup]="form">
+                <mat-form-field appearance="outline" class="form-control" [hideRequiredMarker]="true">
+                    <mat-label>Nome</mat-label>
+                    <input type="text" matInput formControlName="name">
+                    <mat-error *ngIf="form.get('name')?.hasError('required')">
+                        Campo é obrigatório
+                    </mat-error>
+                </mat-form-field>
+                <mat-checkbox formControlName="isAnonymous" class="form-checkbox">Não quero compartilhar meu nome</mat-checkbox>
+                <mat-form-field appearance="outline" class="form-control" [hideRequiredMarker]="true">
+                    <mat-label>Insira seu e-mail</mat-label>
+                    <input type="email" matInput formControlName="email">
+                    <mat-error *ngIf="form.get('email')?.hasError('required')">
+                        Campo é obrigatório
+                    </mat-error>
+                    <mat-error *ngIf="form.get('email')?.hasError('email')">
+                        Digite um e-mail válido
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="form-control" [hideRequiredMarker]="true">
+                    <mat-label>Compartilhe a sua história</mat-label>
+                    <textarea matInput
+                        formControlName="history"
+                        cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="1"
+                        cdkAutosizeMaxRows="5">
+                    </textarea>
+                    <mat-error *ngIf="form.get('history')?.hasError('required')">
+                        Campo é obrigatório
+                    </mat-error>
+                </mat-form-field>
+            </form>
+            <button mat-flat-button
+                color="primary"
+                class="w-100 btn btn-primary"
+                (click)="sendData()"
+                [disabled]="form.invalid">
+                Cadastrar história
+            </button>
+        </div>
+    </div>
+</app-wrapper>
