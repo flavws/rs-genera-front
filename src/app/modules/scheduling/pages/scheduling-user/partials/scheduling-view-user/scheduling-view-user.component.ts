@@ -81,14 +81,14 @@ export class SchedulingViewUserComponent implements AfterContentInit, OnDestroy 
         this.storageService.deleteProfessional();
     }
 
-    public goToResult(person_id: number): void {
+    public goToResult(professional_id: number): void {
         const data = localStorage.getItem('user');
         const user_info = data ? JSON.parse(data) : null;
 
         if (user_info) {
             const scheduling: SchedulingInterface = {
-                persons_id: person_id,
-                professionals_id: user_info.id,
+                persons_id: user_info.persons_id,
+                professionals_id: professional_id,
                 date_scheduling: new Date().toISOString()
             };
             this.schedulingService.add(scheduling).pipe(takeUntil(this._destroy$)).subscribe({

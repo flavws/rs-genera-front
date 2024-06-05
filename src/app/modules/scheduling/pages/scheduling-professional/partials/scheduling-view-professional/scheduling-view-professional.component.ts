@@ -120,7 +120,7 @@ export class SchedulingViewProfessionalComponent implements AfterContentInit, On
         if (user_info) {
             const scheduling: SchedulingInterface = {
                 persons_id: person_id,
-                professionals_id: user_info.id,
+                professionals_id: user_info.professionals_id,
                 date_scheduling: new Date().toISOString()
             };
             this.schedulingService.add(scheduling).pipe(takeUntil(this._destroy$)).subscribe({
